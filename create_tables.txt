@@ -1,0 +1,21 @@
+-- Таблица пользователей
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    telegram_id BIGINT UNIQUE NOT NULL,
+    username TEXT
+);
+
+-- Таблица общих слов
+CREATE TABLE IF NOT EXISTS words (
+    id SERIAL PRIMARY KEY,
+    word_ru TEXT NOT NULL,
+    word_en TEXT NOT NULL
+);
+
+-- Таблица персональных слов пользователей
+CREATE TABLE IF NOT EXISTS user_words (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    word_ru TEXT NOT NULL,
+    word_en TEXT NOT NULL
+);
