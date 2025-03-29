@@ -4,7 +4,7 @@ import random
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 # === НАСТРОЙКИ ===
-TOKEN = "7039489599:AAG7xh2vM2JE3L-m5lGB8qorUTTv8lSwkh8"
+TOKEN = "TOKEN"
 bot = telebot.TeleBot(TOKEN)
 
 DB_NAME = "english_bot"
