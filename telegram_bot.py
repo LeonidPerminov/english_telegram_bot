@@ -1,16 +1,18 @@
 import telebot
 import psycopg2
 import random
+import os
+
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 # === НАСТРОЙКИ ===
-TOKEN = "7039489599:AAG7xh2vM2JE3L-m5lGB8qorUTTv8lSwkh8"
+TOKEN = os.getenv("TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
-DB_NAME = "english_bot"
-DB_USER = "postgres"
-DB_PASSWORD = "1234"
-DB_HOST = "localhost"
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
 
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
 cursor = conn.cursor()
